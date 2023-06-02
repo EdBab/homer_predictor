@@ -24,14 +24,9 @@ After evaluating both the root mean squared and median absolute error, the Rando
 I then implemented random search with cross validation in order to select the best hyperparameters for the Random Forest Regressor. Six different hyperparameters were tuned in an effort to determine the best combination for our model. After fitting on the training data, it became apparent which hyperparameter values yielded the best results. After completing the random search, I used those results to inform a grid search, and I only tuned _min_samples_leaf_ as a hyperparameter as I performed the grid search.  
 
 ### Final Run
-The best model returned by the grid search was the one I used for my final run. And in that final run, the mean absolute error was _-3.027_, meaning the model was only off by about 3 home runs per person when predicting next year's home run total.
+The best model returned by the grid search was the one I used for my final run. And in that final run, the mean absolute error was _--2.96_, meaning the model was off by less than 3 home runs per person when predicting next year's home run total.
 
 ## Conclusion
-After crunching all of the data provided by Statcast, I was able to get within 3 home runs of predicting the following year's homer count. The Random Forest Regression model performed the best and it saw slight improvment after tuning hyperparameters (.22 home runs, or ~6% increase in accuracy). Additionally, the features most important to the model are shown below:
-* RAR
-* WAR
-* L-WAR
-* HR (Previous Season's total)
-* -WPA
-
+After crunching all of the data provided by Statcast, I was able to get within 3 home runs of predicting the following year's homer count. From the outset, the Random Forest Regression model performed the best, with a default MAE of _3.19_. After tuning the hyperparameters, the MAE was _2.96_, which is a .23 decrease, meaning a ~7% increase in accuracy. Additionally, the features most important to the model are shown below:
+![IMPORTANCE](images/feature_importance.png)
 
